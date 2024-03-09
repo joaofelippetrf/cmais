@@ -1,18 +1,19 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 int main(){
 int n;
 cin >> n;
 int i=0;
-int vet[n];
+vector<int> vet(n);
 while(i<n)
 {
     cin >> vet[i];
     i++;
 }
-sort(vet,vet+n);
+sort(vet.begin(),vet.end());
 i=1;
 if(vet[0]==vet[1])
 {
@@ -22,5 +23,10 @@ if(vet[0]==vet[1])
     }
     i++;
 }
+if(vet[i]==vet[i-1]){
+    cout << "NO";
+}
+else{
 cout << vet[i];
+}
 }
